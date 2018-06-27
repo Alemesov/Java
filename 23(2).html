@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Это заголовок тайтл</title>
+		<script>
+
+		
+		var elems = document.getElementsByTagName('a');
+for (var i = 0; i < elems.length; i++) {
+	elems[i].addEventListener('mouseover', func);
+}
+
+function func() {
+	this.title = this.innerHTML;
+}
+		</script>
+	</head>
+	<body>
+	<a href="#" title="">Текст первой ссылки</a>
+<a href="#" title="">Текст второй ссылки</a>
+<a href="#" title="">Текст третьей ссылки</a>
+</body>
+	</body>
+</html>

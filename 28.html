@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+		<title>Это заголовок тайтл</title>
+	</head>
+	<body>
+	<ul id="ul">
+	<li>пункт 1</li>
+	<li>пункт 2</li>
+	<li>пункт 3</li>
+</ul>
+
+<button id="btn">Добавить li</button>
+<script>
+	var ul = document.getElementById('ul');
+       ul.addEventListener('click', addSign);
+    function addSign() {
+    	event.target.innerHTML = event.target.innerHTML + '!';
+}
+
+	var button = document.getElementById('btn');
+		button.addEventListener('click', addLi);
+
+	function addLi() {
+		var li = document.createElement('li');
+		li.innerHTML = 'пункт';
+		ul.appendChild(li);
+}
+</script>
+</body>
+
+
+</html>

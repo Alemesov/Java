@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Это заголовок тайтл</title>
+		<script>
+
+		var elems = document.getElementsByTagName('p');
+for (var i = 0; i < elems.length; i++) {
+	elems[i].addEventListener('click', func);
+}
+
+function func() {
+	this.innerHTML = this.innerHTML * this.innerHTML;
+}
+		</script>
+	</head>
+	<body>
+	<p>2</p>
+    <p>4</p>
+    <p>6</p>
+</body>
+	</body>
+</html>

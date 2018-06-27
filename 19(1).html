@@ -1,0 +1,23 @@
+!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Это заголовок тайтл</title>
+		<script>
+         <button onclick="buttonClick()">Нажми на меня</button>
+          <input type="text" id="input1" value="!!!">
+		  <input type="text" id="input2" value="???">
+		   function buttonClick() {
+	var input1 = document.getElementById('input1');
+	var input2 = document.getElementById('input2');
+	var input1Value = input1.value;
+	var input2Value = input2.value;
+	input1.value = input2Value;
+	input2.value = input1Value;
+}
+		 </script>
+	</head>
+	<body>
+		Это основное содержимое страницы.
+	</body>
+</html>

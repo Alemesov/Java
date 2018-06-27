@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Это заголовок тайтл</title>
+		<script>
+                  var date = new Date();
+                  alert(date.getDate());
+               </script>
+		<script>
+                  var date = new Date();
+                  alert(date.getMonth());
+               </script>
+		<script>
+                  var date = new Date();
+                  alert(date.getFullYear());
+               </script>
+		<script>
+                  var date = new Date();
+                  alert(date.getDay());
+               </script>
+		<script>
+                var date = new Date();
+                var day = date.getDay();
+
+                function showDay(day) {
+	            var days = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
+	            return days[day];
+		}
+
+		alert(showDay(day));
+               </script>
+		<script>
+                  var date = new Date();
+		  var minute = Math.floor(date.getTime() / (1000 * 60));
+		  alert(minute);
+               </script>
+		<script>
+		var date = new Date();
+		var now = new Date(date.getFullYear(), 		date.getMonth(), date.getDate(), 0, 0, 0);
+		var result = Math.floor((date.getTime() - now.getTime()) / 1000);
+		alert(result);
+               </script>
+	</head>
+	</head>
+	<body>
+
+	</body>
+
+</html>

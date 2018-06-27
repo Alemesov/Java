@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link href="jquery-ui.css" rel="Stylesheet" />	
+        <script src="jquery-3.3.1.min.js"></script>
+        <script src="jquery-ui.min.js"></script>
+	</head>
+	<body>
+	 	<label for="tags">Введите страну (Беларусь, Бельгия, Бирма)</label><br><br>
+	<input id="tags">
+                <script>
+$(document).ready(function(){
+			var availableTags = [
+				'Беларусь',
+				'Бельгия',
+				'Бирма',
+			];
+			$( "#tags" ).autocomplete({source: availableTags});
+		});
+	</body>
+</html>

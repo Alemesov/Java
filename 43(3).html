@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link href="jquery-ui.css" rel="Stylesheet" />	
+        <script src="jquery-3.3.1.min.js"></script>
+        <script src="jquery-ui.min.js"></script>
+	</head>
+	<body>
+	 <div id="block1">
+<h2>1. Нажми  на меня</h2>
+<ol>
+	<li>пункт</li>
+	<li>пункт</li>
+	<li>пункт</li>
+	<li>пункт</li>
+	<li>пункт</li>
+	<li>пункт</li>
+	<li>пункт</li>
+</ol>
+</div>
+                <script>
+$(document).ready(function(){
+$('#block1').click(
+function(){
+$(this).effect('puff', {percent: 300}, 1000);
+	return false;
+	}
+	)
+});
+</script>
+	</body>
+</html>

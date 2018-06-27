@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Это заголовок тайтл</title>
+		<script>
+function start() {
+
+	window.setInterval(timer, 1000);
+}
+
+function timer() {
+	var elem = document.getElementById('test');
+	elem.value = parseInt(elem.value)+1; 
+}
+		</script>
+	</head>
+	<body>
+		<input type="text" value="1" id="test">
+        <input type="submit" onclick="start()">
+	</body>
+</html>

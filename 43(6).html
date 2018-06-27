@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link href="jquery-ui.css" rel="Stylesheet" />	
+        <script src="jquery-3.3.1.min.js"></script>
+        <script src="jquery-ui.min.js"></script>
+	</head>
+	<body>
+	 <a href="" id="set-date">Установить дату в 10.12.2012</a><br>
+	<a href="" id="show">Открыть календарь</a><br>
+	<a href="" id="hide">Закрыть календарь</a><br>
+	<p>Дата: <input type="text" id="datepicker"></p>
+                <script>
+		$(document).ready(function(){
+			$("#datepicker")
+				.datepicker({
+					dayNamesMin: [ "Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+					monthNames: [ "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь" ],
+					firstDay: 1
+				})
+				.datepicker("option", "dateFormat", 'dd.mm.yy')
+			$('#set-date').click(function(){$("#datepicker").datepicker( "setDate", "10.12.2012" ); return false;})
+			$('#show').click(function(){$("#datepicker").datepicker( "show" ); return false;})
+			$('#hide').click(function(){$("#datepicker").datepicker( "hide" ); return false;})
+		});
+</script>
+	</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+		<title>Это заголовок тайтл</title>
+		<style> 
+		#show {
+			width: 100px;
+			height: 100px;
+			border: 1px solid red;
+			position: absolute;
+			top: 30px;
+			left: 0px;
+		}
+		body {
+			height: 400px;
+			margin: 0px;
+		}
+	 </style>
+	</head>
+	<body>
+	Нажмите в любое место.
+	<div id="show" style="left: 224px; top: 312px;"></div>
+
+<script>
+	window.addEventListener('click', go);
+	function go(event) {
+		var elem = document.getElementById('show');
+		elem.style.left = (event.clientX - parseInt(window.getComputedStyle(elem, "").width) / 2)+'px';
+		elem.style.top = (event.clientY  - parseInt(window.getComputedStyle(elem, "").height) / 2)+'px';
+	}
+</script>
+</body>
+
+
+</html>

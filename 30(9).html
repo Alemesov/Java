@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+		<title>Это заголовок тайтл</title>
+	</head>
+	<body>
+ 	   <input id="test" type="checkbox" checked="" onchange="func()">
+       <input id="text" type="text" value=""> 
+    </body>  
+<script>
+     var elem = document.getElementById('test');
+     var input =document.getElementById('text');
+     function func() {
+     	if (!elem.checked) {
+	     	input.style.display = "none";
+ 	}      else {
+		     input.style.display = "inline";
+ 	}
+ }  
+</script>
+</html>

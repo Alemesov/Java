@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+		<title>Это заголовок тайтл</title>
+	</head>
+	<body>
+	<input class="cls" type="text" value="" placeholder="число">
+	<input class="cls" type="text" value="" placeholder="число">
+	<input class="cls" type="text" value="" placeholder="число">
+	<button id="task">Нажимайте</button>
+	<input id="sum" type="text" value="">   
+	<button id="btn">Добавить li</button>
+	</body>
+<script>
+	var elem = document.getElementById('task');
+		elem.addEventListener('click', func);
+	var elem1 = document.getElementsByClassName('cls');
+
+	function func() {
+		var sum = 0;
+		for (var i = 0; i < elem1.length; i++) {
+			sum += +elem1[i].value;
+	}
+	var newElem = document.getElementById('sum');
+	newElem.value = sum;
+}    
+</script>
+</html>

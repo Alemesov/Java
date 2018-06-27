@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+		<title>Это заголовок тайтл</title>
+	</head>
+	<body onload="start()">
+ 	   <input id="text" type="checkbox" checked="">
+       <a href='#' onclick="func()">ссылка</a> 
+    </body>  
+<script>
+	function func() {
+	var elem = document.getElementById('text');
+	if (elem.checked) {
+		elem.checked = false;
+ 	} else {
+		elem.checked = true;
+ 	}
+  }       
+</script>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Это заголовок тайтл</title>
+		<script>
+			
+				function func() {
+	            var elems = document.getElementsByTagName('p');
+	            for (var i = 0; i < elems.length; i++) {
+	        	elems[i].innerHTML = "ку-ку";
+	}
+}
+	
+		</script>
+	</head>
+	<body>
+		<input type="submit" onclick="func()">
+		<h2>Заголовок, не поменяется.</h2>
+        <p>Абзац, поменяется.</p>
+        <p>Абзац, поменяется.</p>
+        <p>Абзац, поменяется.</p>
+	</body>
+</html>

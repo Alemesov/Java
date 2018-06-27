@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+		<title>Это заголовок тайтл</title>
+	</head>
+	<body>
+	<input id="num" type="text" value="" placeholder="Введите дату">
+<button id="but">Жми</button>  
+	</body>
+<script>
+	var elem = document.getElementById('num');
+	var btn = document.getElementById('but');
+	btn.addEventListener('click', func);
+
+	function func() {
+		var str = elem.value;
+ 		var arr = str.split('');
+		var arr2 = str.split('').reverse();
+		for(var i = 0; i < arr.length; i++) {
+			if(arr[i]!== arr2[i]) { 
+				alert('это слово не палиндром');
+				return;
+		}
+  	}
+	alert('это слово палиндром');
+	return;
+}
+</script>
+</html>

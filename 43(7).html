@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link href="jquery-ui.css" rel="Stylesheet" />	
+        <script src="jquery-3.3.1.min.js"></script>
+        <script src="jquery-ui.min.js"></script>
+	</head>
+	<body>
+	 <a href="#" id="show">Показать окно!</a><br>
+	<a href="#" id="hide">Спрятать окно!</a><br>
+	<div id="dialog" title="Простое окно">
+	  <p>
+		This is the default dialog which is useful for 
+		displaying information. The dialog window can be 
+		moved, resized and closed with the 'x' icon.
+	  </p>
+	</div>
+                <script>
+		$(document).ready(function(){
+			$("#dialog").dialog({
+					autoOpen: false,
+					show: "blind",
+					hide: "explode"
+				}
+			);
+			$('#show').click(function(){
+				$( "#dialog" ).dialog( "open" );
+				return false;
+			});
+			$('#hide').click(function(){
+				$( "#dialog" ).dialog( "close" );
+				return false;
+			});
+		});
+	</body>
+</html>

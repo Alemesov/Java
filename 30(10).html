@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+		<title>Это заголовок тайтл</title>
+	</head>
+	<body>
+ 	   <input type="text">
+       <button>Нажимайте</button>
+<ul></ul>
+    </body>  
+<script>
+     var inp = document.querySelector('input');
+var btn = document.querySelector('button');
+var list = document.querySelector('ul');
+btn.addEventListener('click', func);
+
+function func() {
+	var str = inp.value;
+	var arr = str.split(',');
+	var item;
+	list.innerHTML = '';
+	for (var i = 0; i < arr.length; i++){
+		item = document.createElement('li');
+		item.innerHTML = arr[i];
+		list.appendChild(item);
+	}
+}
+</script>
+</html>

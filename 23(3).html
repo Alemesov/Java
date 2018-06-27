@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Это заголовок тайтл</title>
+		<script>
+
+		
+		var elems = document.getElementsByTagName('input');
+var parag = document.getElementById('test');
+for (var i = 0; i < elems.length; i++) {
+	elems[i].addEventListener('blur', func);
+}
+
+function func() {
+	parag.innerHTML = this.value;
+}
+		</script>
+	</head>
+	<body>
+	<input type="text" value="1">
+<input type="text" value="2">
+<input type="text" value="3">
+<p id="test"></p>
+</body>
+	</body>
+</html>

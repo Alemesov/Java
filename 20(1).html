@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Это заголовок тайтл</title>
+		<script>
+			
+				function go(){
+			var input1 = +document.getElementById('input1').value;
+			var input2 = +document.getElementById('input2').value;
+			var result = document.getElementById('result');
+			result.innerHTML = input1 + input2;
+		}
+	
+		</script>
+	</head>
+	<body>
+		<input type="text" value="" id="input1">
+		"+"
+		<input type="text" value="" id="input2">
+		"="
+		<span id="result">?</span>
+		<br>
+		<br>
+		<button onclick="go()">Нажмите чтобы сложить</button>
+	</body>
+</html>

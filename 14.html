@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Это заголовок тайтл</title>
+	<script>
+	var arr = [];
+	var str = 'x';
+	for (var i = 0; i < 10; i++) {
+		arr.push(str);
+		str += 'x';
+	}
+	alert(arr);
+	</script>
+	<script>
+	var arr = [];
+	for (var i = 1; i < 10; i++) {
+		var str = '';
+		for (var j = 0; j < i; j++) {
+			str += i;
+		}
+		arr.push(str);
+	}
+	alert(arr);
+	</script>
+	<script>
+	var arr = [1, 3, 5, 6, 7, 9];
+	var result = [];
+	for (var i = arr.length - 1; i >= 0; i--) {
+		result.push(arr[i]);
+	}
+	alert(result);
+		</script>
+	<script>
+	var arr = [[1, 2, 3], [4, 5], [6]];
+	var sum = 0;
+	for (var i = 0; i < arr.length; i++) {
+		for (var j = 0; j < arr[i].length; j++) {
+			sum += arr[i][j];
+		}
+	}
+	alert(sum);
+		</script>
+</head>
+<body>
+	Это основное содержимое страницы.
+</body>
+</html>

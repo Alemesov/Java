@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+		<title>Это заголовок тайтл</title>
+	</head>
+	<body>
+      <input type="text" value="" id="task">
+      <input type="text" value="" id="length" placeholder="введите количество символов строки">
+      <button id="btn" onclick='func()'>Нажимайте</button>
+	</body>
+<script>
+	var input = document.getElementById('task');
+
+function func() {
+	var rand = [];
+	var str = '0123456789qwertyuiopasdfghjklzxcvbnm';
+	var arr = str.split('');
+	for (var i = 0; i < 8; i++) {
+		rand[i] = arr[getRandom(0, arr.length)];
+	}
+	input.value = rand.join('');
+}
+
+function getRandom(min, max) {
+	return Math.floor(Math.random() * max - min + 1) + min;
+}  
+</script>
+</html>

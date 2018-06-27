@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+		<title>Это заголовок тайтл</title>
+	</head>
+	<body>
+ 	   <table>
+	<tr>
+		<td>25</td>
+		<td>11</td>
+		<td>8</td>
+	</tr>
+	<tr>
+		<td>54</td>
+		<td>13</td>
+		<td>22</td>
+	</tr>
+	<tr>
+		<td>15</td>
+		<td>23</td>
+		<td>6</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+
+<input type="text"><button>Нажимайте</button>
+<ul></ul>
+    </body>  
+<script>
+     var btn = document.querySelector('button');
+     var rows = document.getElementsByTagName('tr');
+     btn.addEventListener('click', func);
+
+function func() {
+	var arr = [];
+	for (var i = 0; i < rows.length-1; i++) {
+		for(var j = 0; j < rows[i].children.length; j++) {
+			if (arr[j] == undefined) {
+				arr[j] = 0;
+			}
+			arr[j] += Number(rows[i].children[j].innerHTML);
+		}
+	}
+	for (var k = 0; k < rows[rows.length-1].children.length; k++) {
+		rows[rows.length-1].children[k].innerHTML = arr[k];
+	}
+} 
+</script>
+</html>

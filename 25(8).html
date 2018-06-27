@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Это заголовок тайтл</title>
+		<script>
+			var elem = document.getElementById('elem');
+            elem.addEventListener('click', func);
+
+              function func() {
+              	var startWidth = this.offsetWidth;
+              	var startHeight = this.offsetHeight;
+              	this.style.width = startWidth * 2 + 'px';
+              	this.style.height = startHeight * 2 + 'px';
+} 
+		</script>
+	</head>
+	<body>
+		<div id="elem"></div>
+	</body>
+</html>

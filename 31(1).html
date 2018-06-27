@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>Это заголовок тайтл</title>
+		<style>
+		#result {
+			display: none;
+		}
+		#again {
+			display: none;
+		}
+	</style>
+	</head>
+	<body>	
+	<form>
+		<ol id="test">
+			<li class="question">
+				Какой язык вы предпочитаете?
+				<ol>
+					<li><label><input type="radio" name="a1">JavaScript</label></li>
+					<li><label><input type="radio" name="a1">HTML/CSS</label></li>
+					<li><label><input type="radio" name="a1">PHP</label></li>
+					<li><label><input type="radio" name="a1">C++</label></li>
+					<li><label><input type="radio" name="a1">Русский</label></li>
+					<li><label>Свой ответ: <input type="text" class="your_answer"></label></li>
+				</ol>
+			</li>
+			<li class="question">
+				Какой редактор кода используете?	
+				<ol>
+					<li><label><input type="radio" name="a2">Notepad++</label></li>
+					<li><label><input type="radio" name="a2">Блокнот</label></li>
+					<li><label><input type="radio" name="a2">Sublime Text</label></li>
+					<li><label>Свой ответ: <input type="text" class="your_answer"></label></li>
+				</ol>
+			</li>
+			<li class="question">
+				Какой у вас опыт?
+				<ol>
+					<li><label><input type="radio" name="a3">6 месяцев</label></li>
+					<li><label><input type="radio" name="a3">Около года</label></li>
+					<li><label><input type="radio" name="a3">Пара лет</label></li>
+					<li><label><input type="radio" name="a3">Пол жизни</label></li>
+					<li><label>Свой ответ: <input type="text" class="your_answer"></label></li>
+				</ol>
+			</li>
+		</ol>
+		<div id="result"></div>
+		<input type="reset" id="check" value="Проверить">
+		<input type="button" id="again" value="Пройти опрос еще раз">
+	</form>
+	<script>
+		var testEl = document.getElementById('test');
+		var checkEl = document.getElementById('check');
+		var againEl = document.getElementById('again');
+		var resultEl = document.getElementById('result');
+		var questionsEl = document.getElementsByClassName('question');
+		var result = [];
+		checkEl.addEventListener('click', checkAnswers);
+		againEl.addEventListener('click', showTest);
+		function checkAnswers() {
+			for (var i = 0; i < questionsEl.length; i++) {
+				var answers = questionsEl[i].querySelectorAll('input[type=radio]');
+				var yourAnswer = questionsEl[i].querySelector('input[type=text]');
+				checkOneAnswer(answers, yourAnswer, i);
+			}
+			printResult();
+			showResult();
+		}
+		function checkOneAnswer(answers, yourAnswer, i) {
+			result[i] = result[i] || {};
+			result[i].answers = result[i].answers || [];
+			result[i].yourAnswer = result[i].yourAnswer || [];
+			result[i].totalAnswers = result[i].totalAnswers || 0;
+			var resAnswers = result[i].answers;
+			if (yourAnswer.value.trim()) {
+				result[i].yourAnswer.push(yourAnswer.value);
+				return;
+			}
+			for (var j = 0; j < answers.length; j++) {
+				if (answers[j].checked) {
+					resAnswers[j] = resAnswers[j] || 0;
+					resAnswers[j]++;
+					result[i].totalAnswers++;
+				} else {
+					resAnswers[j] = resAnswers[j] || 0;
+				}
+			}
+		}
+		function printResult() {
+            var testClone = testEl.cloneNode(true);
+            var questionAll = testClone.querySelectorAll('.question');
+            var allRadio = [];
+            for (var i = 0; i < questionAll.length; i++) {
+               allRadio[i] = [];
+               var radios = questionAll[i].querySelectorAll('input[type=radio]');
+               for (var j = 0; j < radios.length; j++) {
+                  allRadio[i].push(radios[j]);
+               }
+            }
+            for (var i = 0; i < result.length; i++) {
+			var answers = result[i].answers;
+			var total = result[i].totalAnswers;
+			for (var j = 0; j < answers.length; j++) {
+				var val = answers[j] / total * 100;
+				val = Math.round(val);
+				if (val) {
+					val = ' (' + val + '%)';
+				} else {
+					val = '';
+				}
+				if (allRadio[i] && allRadio[i][j]) {
+					allRadio[i][j].style.display = 'none';
+					allRadio[i][j].parentElement.innerHTML += val;
+				}
+			}
+		}
+            resultEl.innerHTML = '';
+			resultEl.appendChild(testClone);
+		}
+		function showTest() {
+			testEl.style.display = 'block';
+			checkEl.style.display = 'block';
+			resultEl.style.display = 'none';
+			againEl.style.display = 'none';
+		}
+		function showResult() {
+			testEl.style.display = 'none';
+			checkEl.style.display = 'none';
+			resultEl.style.display = 'block';
+			againEl.style.display = 'block';
+		}
+	</script>
+
+</body>
+</html>

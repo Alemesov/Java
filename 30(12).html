@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+		<title>Это заголовок тайтл</title>
+	</head>
+	<body>
+ 	  <div>
+	<input type="text" id="rows_num"><label for="rows_num">№ Ряда</label>
+	<input type="text" id="cols_num"><label for="cols_num">№ Колонки</label>
+	<button>Генерировать</button>
+</div>    
+    </body>  
+<script>
+     var rows_num = document.getElementById('rows_num');
+var cols_num = document.getElementById('cols_num');
+var div = document.querySelector('div');
+var btn = document.querySelector('button');
+btn.addEventListener('click', toGenerate);
+
+function toGenerate() {
+	var tab = document.querySelector('table');
+	if (tab != undefined){
+		tab.innerHTML = '';
+	} else {
+		tab = document.createElement('table');
+		div.appendChild(tab);
+	}
+
+	for (var i = 0; i < rows_num.value; i++) {
+		var row = document.createElement('tr');
+		tab.appendChild(row);
+	}
+
+	var rowsAll = document.getElementsByTagName('tr');
+	for (var i = 0; i < rowsAll.length; i++) {
+		for (var k = 0; k < cols_num.value; k++) {
+			var cell = document.createElement('td');
+			rowsAll[i].appendChild(cell);
+		}
+	}
+}
+</script>
+</html>

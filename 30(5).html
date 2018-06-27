@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+		<title>Это заголовок тайтл</title>
+	</head>
+	<body>
+      <p>Текст1</p>
+      <p>Текст2</p>
+      <p>Текст3</p>
+      <input type="text">
+	</body>
+<script>
+	var elems = document.getElementsByTagName('p');
+for (var i = 0; i < elems.length; i++) {
+	elems[i].addEventListener('click', func);
+}
+
+function func() {
+	var inp = document.querySelector('input');
+	inp.value = Number(inp.value) + 1;
+}  
+</script>
+</html>
